@@ -1,0 +1,48 @@
+Problem 1: School and Students with Courses (Association + Aggregation)
+class Student {
+    String name;
+    List<Course> courses;
+    // enrollInCourse(), viewCourses()
+}
+class Course {
+    String courseName;
+    List<Student> students;
+    // addStudent(), showStudents()
+}
+class School {
+    String name;
+    List<Student> students;
+    // addStudent(), showStudents()
+}
+
+
+
+Problem 2: University with Faculties and Departments (Composition + Aggregation)
+class Faculty { String name; }
+class Department { String deptName; List<Faculty> faculties; }
+class University { String name; List<Department> departments; List<Faculty> facultyPool; }
+
+
+Problem 3: Hospital, Doctors, and Patients (Association + Communication)
+class Doctor {
+    String name;
+    void consult(Patient p) { System.out.println(name + " consulting " + p.name); }
+}
+class Patient {
+    String name;
+    void meetDoctor(Doctor d) { System.out.println(name + " meeting " + d.name); }
+}
+class Hospital { List<Doctor> doctors; List<Patient> patients; }
+
+
+Problem 4: E-commerce Platform (Orders, Customers, Products)
+class Product { String name; double price; }
+class Order { List<Product> products; Customer customer; }
+class Customer { String name; List<Order> orders; }
+
+
+Problem 5: University Management System (Students, Professors, Courses)
+class Student { void enrollCourse(Course c) {...} }
+class Professor { void assignCourse(Course c) {...} }
+class Course { String courseName; Student[] students; Professor prof; }
+
